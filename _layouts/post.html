@@ -1,0 +1,48 @@
+---
+ layout: default 
+--- 
+{% if site.post_type == 'noPicture' %}
+
+<div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col  mdl-cell--12-col-phone mdl-cell--12-col-tablet">
+    <div class="mdl-card__title title-no-picture mdl-color-text--grey-50">
+        <h3 class="quote"><a href="entry.html">{{page.title}}</a></h3>
+
+    </div>
+    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+        {{page.content}}
+    </div>
+    <div>
+        <div class="mdl-card__supporting-text card-meta mdl-color-text--grey-600">
+
+            <strong>{{page.author}}</strong>
+            <span>{{ post.date | date: "%b %-d, %Y" }}</span>
+        </div>
+    </div>
+</div>
+
+{% else %}
+
+<div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col  mdl-cell--12-col-phone mdl-cell--12-col-tablet">
+    <div class="mdl-card__media" style="background: url( {{page.image}}) center/cover; ">
+        <a class=" mdl-card__supporting-text meta mdl-color-text--grey-600" href=" /jekyll/update/2017/01/15/welcome-to-jekyll.html ">
+            <h3 class="mdl-card__title-text mdl-color-text--grey-50">{{page.title}}!</h2>
+        </a>
+
+    </div>
+    <div class="mdl-card__supporting-text">
+
+        <p> {{ page.content }}
+        </p>
+    </div>
+
+
+    <div class="mdl-card__supporting-text mdl-card--border card-meta mdl-color-text--grey-600">
+        <div>
+            <strong>{{page.author}}</strong>
+
+            <span>{{ post.date | date: "%b %-d, %Y" }}</span>
+        </div>
+    </div>
+
+</div>
+{% endif %}
